@@ -46,6 +46,8 @@ router.post('/posts', auth, function(req, res, next) {
   var post = new Post(req.body);
   post.author = req.payload.username;
 
+  console.log(post);
+
   post.save(function(err, post){
     if(err){ return next(err); }
 
